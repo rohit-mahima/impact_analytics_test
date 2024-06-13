@@ -52,7 +52,9 @@ as we don't want to break the rule of no 4 or more consecutive missing days
 
 
 This deduces the correlation - 
+
  T(N) = 2*T(N-1) - T(N-5)
+
  M(N) = T(N-1) - T(N-5)
 
 # Requirements 
