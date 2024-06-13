@@ -32,7 +32,31 @@ What needs to be calculated:
 * M(n) - Total number of missing sequences
 
 ### Steps:
-1. Total valid possibilities for T(n):
+A - Attend, 
+M - Miss
+Total valid possibilities for T(n):
+* T(0) - 1 (only one possibility not attending ceremony)
+* T(1) - 2 (A)
+* T(2) - 4 (AA, AM, MA, MM)
+* T(3) - 8 = 2*4 not (MMM possibility in T(2)) - (AAA, AAM, AMA, AMM, MAA, MAM, MMA, MMM)
+* T(4) - 2*8 -1 = 15 as there would be one MMMM possibility which is not allowed
+
+Total valid missing possibilities for M(n):
+* M(0) = 0
+* M(1) = 1 (M)
+* M(2) = 2 (MA, MM)
+* M(3) = 1*4 (MAA, MAM, MMA, MMM) i.e. Total possibility of T(2)*1
+* M(4) = 1*8 -1 = 7 i.e. total possibility of T(3) - number of MMM in T(3)
+* M(5) = 1*15-1 = 14 i.e. total possibility of T(4) -number of MMMA in T(4)
+as we don't want to break the rule of no 4 or more consecutive missing days
+
+
+This deduces the correlation - 
+ T(N) = 2*T(N-1) - T(N-5)
+ M(N) = T(N-1) - T(N-5)
+
+# Requirements 
+* python 3 or above
 
     
 
