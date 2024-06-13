@@ -60,6 +60,11 @@ This deduces the correlation -
 # Requirements 
 * python 3 or above
 
+## Execution 
+
+python .\src\attendance_solution.p.py
+
+
     
 
 
